@@ -8,11 +8,14 @@
 import Foundation
 
 enum MainViewModelOutput {
-    case showAlert(_ response: String)
+    case noAlert
+    case showAlert(_ error: String)
+    case movies(_ movies: [Movie])
+    case addMovies(_ movies: [Movie])
 }
 
 enum MainViewRoute {
-    case details
+    case details(imdb: String)
 }
 
 protocol MainViewModelDelegate: class {
@@ -23,5 +26,6 @@ protocol MainViewModelDelegate: class {
 protocol MainViewModelProtocol: class {
     var delegate: MainViewModelDelegate? { get set }
     
+    func searchMovie(with keyword: String, showError: Bool, page: Int)
     func go(to viewController: MainViewRoute)
 }

@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74B-hN-bSe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your search keyword" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="74B-hN-bSe">
+                                <rect key="frame" x="5" y="0.0" width="365" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -24,15 +24,15 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" enablesReturnKeyAutomatically="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="doneAccessory" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7ds-cw-2PW">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7ds-cw-2PW">
                                 <rect key="frame" x="0.0" y="50" width="375" height="617"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V4n-6Y-ge3">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V4n-6Y-ge3">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -48,9 +48,9 @@
                             <constraint firstAttribute="trailing" secondItem="7ds-cw-2PW" secondAttribute="trailing" id="3Ar-Js-Izj"/>
                             <constraint firstItem="7ds-cw-2PW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="82X-ZZ-N4L"/>
                             <constraint firstItem="7ds-cw-2PW" firstAttribute="top" secondItem="74B-hN-bSe" secondAttribute="bottom" id="AJM-8R-YrQ"/>
-                            <constraint firstItem="74B-hN-bSe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JJ7-Ja-gIn"/>
+                            <constraint firstItem="74B-hN-bSe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="JJ7-Ja-gIn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7ds-cw-2PW" secondAttribute="bottom" id="QT6-MP-Oub"/>
-                            <constraint firstAttribute="trailing" secondItem="74B-hN-bSe" secondAttribute="trailing" id="ind-Gl-pO8"/>
+                            <constraint firstAttribute="trailing" secondItem="74B-hN-bSe" secondAttribute="trailing" constant="5" id="ind-Gl-pO8"/>
                         </constraints>
                     </view>
                     <connections>

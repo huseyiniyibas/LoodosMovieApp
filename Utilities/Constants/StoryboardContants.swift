@@ -9,4 +9,5 @@ import Foundation
 
 enum AppSceneName: String {
     case main = "Main"
+    case details = "Details"
 }

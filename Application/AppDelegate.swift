@@ -18,6 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
+        let mainViewController = MainBuilder.make()
+        let navigationController = BaseNavigationController(rootViewController: mainViewController)
+        if let window = window {
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
+        }
+        
         return true
     }
 
