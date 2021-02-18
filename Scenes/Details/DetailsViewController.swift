@@ -6,6 +6,7 @@
 //
 
 import Alamofire
+import FirebaseAnalytics
 import UIKit
 
 class DetailsViewController: BaseViewController {
@@ -86,6 +87,7 @@ extension DetailsViewController {
     
     private func setMovie(_ movie: Movie) {
         DispatchQueue.main.async {
+            self.addLogForFirebaseAnalytics(movie)
             self.title = movie.Title
             self.titleLabel.text = movie.Title
             self.yearLabel.text = movie.Year
@@ -144,20 +146,32 @@ extension DetailsViewController {
             if let image = image { self.blurPosterImageView.image = image }
             let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            blurEffectView.frame = self.blurPosterImageView.bounds
+            blurEffectView.frame = self.view.bounds
             blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             self.blurPosterImageView.addSubview(blurEffectView)
         }
+    }
+    
+    private func addLogForFirebaseAnalytics(_ movie: Movie) {
+        Analytics.logEvent(
+            "movie_opened", parameters: [
+                "Title": "\(String(describing: movie.Title))",
+                "Year": "\(String(describing: movie.Year))",
+                "Rated": "\(String(describing: movie.Rated))",
+                "imdbID": "\(String(describing: movie.imdbID))",
+                "date": "\(Date())"
+            ]
+        )
     }
 }
 
 // MARK: - Network
 extension DetailsViewController: DetailsViewModelDelegate {
-    func viewModelOutput(output: DetailsViewModelOutput) {
-        DispatchQueue.main.async {
-            self.hideLoading()
-            
-            switch output {
+        func viewModelOutput(output: DetailsViewModelOutput) {
+            DispatchQueue.main.async {
+                self.hideLoading()
+                
+                switch output {
             case .showAlert(let error):
                 self.alert(message: error)
             case .movie(let movie):
