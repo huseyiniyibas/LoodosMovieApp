@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your search keyword" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="74B-hN-bSe">
-                                <rect key="frame" x="5" y="0.0" width="365" height="50"/>
+                                <rect key="frame" x="5" y="66" width="365" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -30,7 +31,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7ds-cw-2PW">
-                                <rect key="frame" x="0.0" y="50" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V4n-6Y-ge3">
                                     <size key="itemSize" width="128" height="128"/>
@@ -40,17 +41,32 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjt-gf-0Tz">
+                                <rect key="frame" x="77" y="15" width="221" height="41"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Loodos Movie">
+                                        <attributes>
+                                            <color key="NSColor" systemColor="systemYellowColor"/>
+                                            <font key="NSFont" size="35" name="TrebuchetMS-Bold"/>
+                                            <font key="NSOriginalFont" size="35" name="TrebuchetMS-Bold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="74B-hN-bSe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2zl-TA-q4d"/>
                             <constraint firstAttribute="trailing" secondItem="7ds-cw-2PW" secondAttribute="trailing" id="3Ar-Js-Izj"/>
                             <constraint firstItem="7ds-cw-2PW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="82X-ZZ-N4L"/>
                             <constraint firstItem="7ds-cw-2PW" firstAttribute="top" secondItem="74B-hN-bSe" secondAttribute="bottom" id="AJM-8R-YrQ"/>
                             <constraint firstItem="74B-hN-bSe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="JJ7-Ja-gIn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7ds-cw-2PW" secondAttribute="bottom" id="QT6-MP-Oub"/>
+                            <constraint firstItem="kjt-gf-0Tz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WgA-fd-b0M"/>
+                            <constraint firstItem="74B-hN-bSe" firstAttribute="top" secondItem="kjt-gf-0Tz" secondAttribute="bottom" constant="10" id="iZc-HE-IBS"/>
                             <constraint firstAttribute="trailing" secondItem="74B-hN-bSe" secondAttribute="trailing" constant="5" id="ind-Gl-pO8"/>
+                            <constraint firstItem="kjt-gf-0Tz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="sc1-IN-GxG"/>
                         </constraints>
                     </view>
                     <connections>
@@ -63,4 +79,9 @@
             <point key="canvasLocation" x="139" y="124"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

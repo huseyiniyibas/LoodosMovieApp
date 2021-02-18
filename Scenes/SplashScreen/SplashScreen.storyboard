@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="IDv-p2-365">
+            <objects>
+                <viewController storyboardIdentifier="SplashScreen" id="Nxo-mM-5mI" customClass="SplashScreenViewController" customModule="LoodosMovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WvD-p9-hF3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IO4-r3-IaX">
+                                <rect key="frame" x="15" y="448" width="384" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IUJ-4j-iDi"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IO4-r3-IaX" firstAttribute="centerY" secondItem="WvD-p9-hF3" secondAttribute="centerY" id="F3j-lj-3Il"/>
+                            <constraint firstItem="IUJ-4j-iDi" firstAttribute="trailing" secondItem="IO4-r3-IaX" secondAttribute="trailing" constant="15" id="UfH-2R-EEX"/>
+                            <constraint firstItem="IO4-r3-IaX" firstAttribute="leading" secondItem="IUJ-4j-iDi" secondAttribute="leading" constant="15" id="m6A-9r-xi5"/>
+                            <constraint firstItem="IO4-r3-IaX" firstAttribute="centerX" secondItem="WvD-p9-hF3" secondAttribute="centerX" id="wKf-gj-5IJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="warningLabel" destination="IO4-r3-IaX" id="Y7Q-Ss-ttG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eJT-AF-NEL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="91.741071428571431"/>
+        </scene>
+    </scenes>
+</document>

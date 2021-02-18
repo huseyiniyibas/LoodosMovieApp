@@ -52,6 +52,12 @@ class DetailsViewController: BaseViewController {
         setData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        blurPosterImageView.isHidden = true
+    }
+    
 }
 
 // MARK: - Delegates
@@ -59,6 +65,9 @@ class DetailsViewController: BaseViewController {
 // MARK: - Functions
 extension DetailsViewController {
     private func setUI() {
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.tintColor = .black
+        
         posterImageView.layer.cornerRadius = 12
         posterImageView.layer.borderWidth = 1
         posterImageView.layer.borderColor = UIColor.systemYellow.cgColor
@@ -77,6 +86,7 @@ extension DetailsViewController {
     
     private func setMovie(_ movie: Movie) {
         DispatchQueue.main.async {
+            self.title = movie.Title
             self.titleLabel.text = movie.Title
             self.yearLabel.text = movie.Year
             self.countryLabel.text = movie.Country
@@ -130,12 +140,14 @@ extension DetailsViewController {
     }
     
     private func setBlurPosterImage(image: UIImage?) {
-        if let image = image { blurPosterImageView.image = image }
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = blurPosterImageView.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        blurPosterImageView.addSubview(blurEffectView)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            if let image = image { self.blurPosterImageView.image = image }
+            let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            blurEffectView.frame = self.blurPosterImageView.bounds
+            blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            self.blurPosterImageView.addSubview(blurEffectView)
+        }
     }
 }
 

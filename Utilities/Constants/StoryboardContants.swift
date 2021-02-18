@@ -8,6 +8,7 @@
 import Foundation
 
 enum AppSceneName: String {
+    case splashScreen = "SplashScreen"
     case main = "Main"
     case details = "Details"
 }

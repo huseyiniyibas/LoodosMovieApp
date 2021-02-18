@@ -129,6 +129,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 // MARK: - Functions
 extension MainViewController {
     private func setUI() {
+        navigationController?.isNavigationBarHidden = true
         searchTextField.addGrayBorder()
         setKeyboardUI()
     }

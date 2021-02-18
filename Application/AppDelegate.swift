@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-        let mainViewController = MainBuilder.make()
+        let mainViewController = SplashScreenBuilder.make()
         let navigationController = BaseNavigationController(rootViewController: mainViewController)
         if let window = window {
             window.rootViewController = navigationController
