@@ -14,7 +14,8 @@ final class MainViewModel: MainViewModelProtocol {
         let parameters = [
             "apikey": Constants.API_KEY,
             "s": keyword,
-            "page": page
+            "page": page,
+            "type": "movie"
         ] as [String : Any]
         
         AF.request(Constants.BASE_URL, parameters: parameters).responseDecodable(of: SearchResponse.self) { response in

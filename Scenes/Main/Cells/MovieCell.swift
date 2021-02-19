@@ -14,7 +14,7 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet private weak var posterImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var yearLabel: UILabel!
-    @IBOutlet private weak var typeLabel: UILabel!
+    @IBOutlet private weak var imdbIDLabel: UILabel!
     
     // MARK: - Variables
     
@@ -35,7 +35,7 @@ extension MovieCell {
     func setCell(_ movie: Movie) {
         titleLabel.text = movie.Title
         yearLabel.text = movie.Year
-        typeLabel.text = movie.Type
+        imdbIDLabel.text = movie.imdbID
         
         if let url = movie.Poster {
             setPosterImage(image: url)

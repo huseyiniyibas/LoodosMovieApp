@@ -167,11 +167,11 @@ extension DetailsViewController {
 
 // MARK: - Network
 extension DetailsViewController: DetailsViewModelDelegate {
-        func viewModelOutput(output: DetailsViewModelOutput) {
-            DispatchQueue.main.async {
-                self.hideLoading()
-                
-                switch output {
+    func viewModelOutput(output: DetailsViewModelOutput) {
+        DispatchQueue.main.async {
+            self.hideLoading()
+            
+            switch output {
             case .showAlert(let error):
                 self.alert(message: error)
             case .movie(let movie):
