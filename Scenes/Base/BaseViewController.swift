@@ -14,7 +14,7 @@ class BaseViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    func setControllerTitle(title: String){
+    func setControllerTitle(title: String) {
         self.title = title
     }
 
